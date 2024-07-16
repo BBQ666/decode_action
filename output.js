@@ -1,44 +1,453 @@
-//Wed Jul 10 2024 01:20:59 GMT+0000 (Coordinated Universal Time)
+//Tue Jul 16 2024 09:36:04 GMT+0000 (Coordinated Universal Time)
 //Base:https://github.com/echo094/decode-js
 //Modify:https://github.com/smallfawn/decode_action
-/**
- * @author Doraemon
- * @name Doraemon_一键安装所需依赖
- * @team 红灯区
- * @origin 红灯区
- * @version 1.0.7
- * @description 一键安装各种基础依赖或文件，理论上无界生涯中只需要执行一次。
- * @rule ^(Doraemon_一键安装所需依赖)$
- * @admin true
- * @public false
- * @systemVersion >=:3.0.0
- * @authentication true
- * @classification ["京东"]
- * @priority 99999
-
-  说明：
-    1、在红灯区同级目录创建一个文件夹，名字随意 如：自用插件
-       Doraemon_一键安装所需依赖.js 放到自用插件中
-
-  ----------------------
-
-  注意：
-   1、自用插件
-   2、简单测试可用
-  ----------------------
-
-  功能：
-    1、一键安装Doraemon库或其他常见所需依赖，无需碰到一次安装一次，一键检测并直接安装（已实现）
-
-  ----------------------
-
-  更新日志：
-    v1.0.0 插件上线
-    2024.2.23 v1.0.1 新增 部分所需依赖
-    2024.5.21 v1.0.4 去除超授限制
-    2024.5.24 v1.0.5 补充 个别依赖
-    2024.5.31 v1.0.6 新增 一键安装最新rebel依赖 一键删除旧 rebel 依赖
-    2024.6.3  v1.0.7 新增 一键安装红灯区mod依赖
-    2024.6.5  v1.0.8 新增 一键安装 Doraemon / 寒佬 所需文件夹
-*/
-/** Code Encryption Block[419fd178b7a37c9eae7b7426c4a042037372274008a18d47c422b4900514bfc68bf5e4174e18c1c3855068ec9ce6f6a0bb6a4af87efa2c5a8f7443d62c8238df589cedbb135e43c54941e496de18135ee94def4635bf5dc6c03f7f884d747449a69a1da6f91be0cb6eecd135e5ffda2dd78d83bec5ec5ed235753cf2573484b605f54565a04d44b45a02d0cb6ae4f2af8900e86ab11211a3160a16784bec3948fe7a1ffb0bcd51b66842590813137e1c9d44e136eb99d2f9272c96baed30aece3129f12948b4b0539555172a191723e6af6585b099ab6f53d187b4d6d223349ec551af80ea327512f8b2c913d0bccd96f33e57fd09ee417d00110fcaa3e4d75409d318503fe2a381cc94647107bee9367678cfe18bef03c1bdc08ff54f44bc276435dd450726a7f5b4e44e3d34646c8211f3f3f77652f56e8c5330daec222d7383bbd7934e808e1345f6ee80d2aede255bfcea6d567f22ae03061bb65141b63cc6d39ef0818dbde796c9a84355c10ec3527dd381e0ad7e333b3f991cf190cd0a0b246aab8f99e7ef6de291c45a16bddb2ae1b953dcdb5372c9bf1bb2f032ec90133e07e0923b1d4294564634b23f098fab40f458efa829643d9993398917f5b9ba777f3a63aa18464142f9248828ae1c1ca50a8b51ce65c44aa05fcead1ffce08581cf13980f6298489d1d6c71a08ae390fc950dc41dc9469d6046d9866751eb541bc98bd153ec67f834aed571e4724467b714e6f37e8c310cbffe3d98bb67d55f9f987fda20aa5142c20bc862d5d2fd42cb31f5042d25aba03b227475378a96dbb5d79e2d8d1c89b94fda3f288bf99ba90d188354aebdea9c789e7cebad25b6e4c519c210e22ce70a424bd03c5b4fe3ad66f49c128df713bcb4ed399044d290482863f697314460ce2d9725561ed9bd8bf52c4da462e20cf4bcbc04d2d6ec3fd097ee6404c47dbeeb80961f0d6c5f0d63248fe8f725f2275a927c2e5f3fa0425e2d269d9672468636b97f906093ef4b1803ca558b666c448c62ad529cde8c8cba6faed8ce5aaa1fd8264cb2a649b749dbeb29654849a49a0686f623ea6f2cab82a7c6651a6aca5a39c3140b284dbb57af2ae353e0e7a41af302348552e6865d88fe0183d4451bafe62604ef0b6707cbc38282ac7c20daff908d4d3268e9771e70b123eda640e16d549aafbcb7966e1c3d2f94d935e301a77b297fdb69418d7161f12dbeb1ab6cb2773b95855d5adbcd9770d91a9f652113d630ecf165d1e2e5b5e58a96b99ece323f1bd4711d4fd0ecf550b2ba4ebb62fadaa2390e0bbf65436cfab3f8ebfb09e53f0c956b9d8e4b51ed6aa097060c423b2345c945ce90e6bd389b363a40ae64c9f494a4fb86d390f45a82d0bd25c3d9f5e02da69c29c796a5c3ca037a946b7c048b7d50849ef172c3620b2354fb9ebf9422d8e15db494098eb5d0415e095500fa0fc0452b3490ff90fb9e6dc3e57b3c3db6a6efd8ea688a7a3d71288bb48387d0d959f2519ffdd6a5c6c32e05474fdc367f64327ed283604d087635fd73d3e9d356b6327f3c76963b50b534052536c7f6483cee2eafe08ab7214cc9333d5793b5acd629901b937286a800e3d9afe6b5c602d903c35065c290e9ce8b36bdb90ad6f0c63d401160f45b6bede83c446ee3ab23546ac76ee3cdcd0389896d089b51f3cb3580d323cfd95f7ee968bb685998bc397c0ab44cd5687e324657263692362ab2ca57c2a6f1f1ee7e01e5879b16b4c04b346e639b7fbba4a1ab9d89a60239ba03d13aea3f2f30c5f17d14f1ac633a32522c9bfa4daabe0726affb723f2f854d358d9609c4a9d7e273a8bfd18edec1207feabfa7bfaa75d682366e0e71c0615d92185a80a7d8be91cb4fd1e1eafb7ed324930211b59c4c7b6f5d872449e008ee0d0df0b4c15eedde08daee5c851fa9cfc26a1dcb84c2215ca50351b66507b1b4ff543aab6ae8851cd2ccfa1c0ddb26d3973b67ba6d790fbb48b745a93e6624e37a67129f08bc414715ea0d2e9a4411b3d9840c06542d3ee007b68d9f7d65d97fc315ac84c42d31b5fbcbbe33cad28318d5611f6cc37a065a710dbcf4238b2933d66025586a81037a910e6abce31d7ce62cfa0a397e0d3ba1557fa6f815d546634d1931b3f42cf148407ec53ee9d71b75dbac9b553a508bfb36533fb1a182e191d78860dfd74e9f52f4ee8042f0c0054640f490f9e7c903e7437e6d2c84d21c7a05c8e521f62499083b068658e106bb0133e9f952b245d9fe17cd37dfe2c269c111f0a23e93ea86f6eef92c17d85b5f5543673015f36af9c7c3d4df0fe75c1e8b6dae93965ad67c01105b76893826fb9b6d1ba7ca1c4ad321ec1190959851b973c1a3f588d04ebd2f103818d6a7761a93a105cad9420caee04e5fdb75622f4569247d2a7344f6269da3e0e19b8e956522a11b98198fdc05f1dbae9e6599caf600b203f4e45242d9bb96a440c9a77d60ddddaf14100925946909a892594c0d0c180f76b1517ca79ae5cb235fbcb803eb950be20db85b0afc0937aaa3b202662b910951707e27214aae05dfdcadbd44f1c675356f8aa99d67f5501ba0045ab8845adef7d4a6929a6f2522bc10a2ec429207a1136453b20c870f37dd7c5814c90f7147974966141ba10c425d3ece45e4f63ac66c103bda5905ea87192a27e054963006b374c1a62c5a39b4b9f178831d06d5722e82d8d4b8774d21565fb7b8872a6ca65f98152f9e4e2425f92628a12d1e3d674d69f03ef0ec601a3bd2475b8d7d8b933ff330da81cb2e904e5feb1417d7ed3ed95ec615aa0b6988ae2b211c25134f0209ce5d027ee6d3015ea775587446de4d2d1a12864fa017496e5333c908234ae8a24916aa92d6fc47d627ede178bd9310211421b1838d706e0ce0f4b6005139f96d85c8f20a2cc56b6a2cbe6af360c0aa30aeb1fa544884974f384c65395ee01aaa48a29d5118a19e00197cb38ac8845b8f9d5c3cf88db7bd3592e0a38efe66466c733e2c81e98a6c2d2619e82e6fdbe1dcd4361b86626955eb047894d50e8894fe93d7c1517b9b0152fa0b09096adf13c2164f0dae5b742a30a877320b4ed143c575ad377f52894aefc63deedefd617175bdd03a91f47cb3a57d438bd2248697dbc62ffae2e6112a8b6b164fd49ca0211ffb590c801017494a9623dcee21efe348e350b8bab6b62614d54c1cc6b399fd9c8288372fab9dc2a7c5989b677a740485ab8c70cbce9ccd262124e94efc6ab0c5d6e8f0270dcb7183c439d36540427684006771049747194286379fecea99df62e07b512836dbecbda08c3ea760cf097b22fe6d2e5541adc4de7e4fe132b7d4c41dd1b335906fa4b96483dcf19ab7a240b90c2ff644db41a27c005d239f96fd9c9baf14fa084bf7e8c69f74ffa794600f92c6c39a9a4733a9c51c71f00c1c642bae55743c8fdea8d75c2b34f17cc117af36603716c1a75afa4695c73c2c0893a070a87e99cb445ae3900812780832fabfa2b01078e4658c7189db8ae5b6c6c5e31a4207a7d2ffb35e14648a3ee64a28454270f0a04f7b279cd0f05fd5e380acb87a4c4d5d92b9896cb8e3d4a95d6e5a3f99ff7a6e4ad3b678eb8a7d84b462a18f40be2e60a0b0a187a780fd09977685ff4594633a4d9ebfac3dd59582db4ae6411780d712c52760dd58f8cd2216a821aced7798a864c7d9d173e227c0d171496eecc95ee2d038c3bae38b20f025e92c842d31127e88e66a4cc39d2ea2f104b1a759aad2780de4bfa0831e518c2bd3acaee4f0db2f455cf5b1ebbe4443c6c416920f80274dbf2d0ee06398e032bfd038908303c41ae52a93da12bba2622c8ac114bfdee2060f9fd969026605ae9043a4189e32faa8891e8e815b26ea8253d79e07de71d85ec7c2847d053e36194b4fa235810dbe95ae6ce90382d28d530fc7d508ec7997fb4849ebb9a93c14229b42ba94d262ea9827baee4b114f34f13b1ba79bcf8caa9ba06a34b6ec0a4d3470f1058b2fc7f7883ac382598bd07bf23d3fe920a119537317c5e763cb7fcae47ac6c6225139239ffc86d19971f24d2621261c15b2e4a2abd17e215112ab6a7a010d38c5962d1bf020348e2707dcd71616e53c2e13293b9cdcf74611fbdddcc8abd7ffa027724b25d494dfdfaf8358f6c12a469028b0d2149ee84bcdc66937376ece7eb97e4f987edf565726564373ec341731cd9964bf18544b2df6fc4041993b0813293d1dd98fe9368b55b88e93ed26bbd65b4ba6d5fb336be051c37bb960b0a1c5cb8d682a0c177f19acab97045043027f84ba4477258400687b13c73d211144c55c7d10ac40f7712a7e602f3158f7edfcdfb34029189a5a86f9af0b8ae50ba714d96dc1ba5e99acff2b7a12b4bbf6268e18b5fd1885865f741cd159bb633b556f70046a0e4d6a354a40e351537df73ddab9350964c7d7784e6532f72ffbc0fc744470811fcfa329f9740877443d8889ae8e22074db03ff6c5eabaf288e41e82202538382969db58570030a7cc4ab8b017b818f100728fd1edbf822349a7f5061ea092be97badbfcd9ea7dd087f8a26dd35a300d8ac4fa7b38e1b53504d51b96d64faa4c9f4d70cc978a71368449f6d1123b014e79b7837a95cd1dd4f03b1dfed64da58451fd2ed25b82b4111d80f364d8106e15c20663ab3b47d3dba745d40687f4d6ad974939cb5127c1ea784be2d076a149f5a2ddc04eb7dd1315e0bc439da7878b2ae5f51af68756075b624d6ddcb7b3fc2138044d0f2eecde101e6ab72f96bdf610b3311ddd5af0fb738d6903890a17cbd40a8eacc6583be86deea51fefbc07207bdec0bb97152945ec76e120cb1706c73155ee030dd43c1bfdbf9a4d7a0802b36e717ed38ce3f3d593a5c9b28ed92dd9552f5a1fc17017c07b3c507546361b6d48104b20989784011076a70a3c7adc0185096c2a996da0cf3ca8aad38044ed8dd35814c62e9027997724501a2571e553d3c8389a14569bc4f0b9217e111b70e75a2f5c69eae3010474d3774e06acc3e5e4eca062e59d8a26735b2747980e99a6c5004a7c28b73029ea7b1ad2da86b5d1c2527290eb7bb894fbce1ea762d44bd633e5038b424d07e532748e1da59d91c910ec35e0eaff4798e842632f556c7e7bcbc7516b59e0739eb630b129c85aa646315e0383b8f997d54a722523cf577017ae8303ebc628ce32d880b3f3ab95ebd77b2b635e2fd01b5f6802c41c84dc8df1ad5e5864aab18576b09177b35a5e97bdb643ee493bd98753c0a25c3708d80991b694f4bc249737dba082fc14434f35f2e26ba790d323ff7374413f0b8b4228280adc351bde3ec48ea3c99456c27117d358ea80b1eb7b21459164407d61a378f9415103dd03ddcc99da58ad0ab6420961e6cc33f0b79d7b6e04fa90da8b388e03f1847cb3bd5d63b6428671900352ff6b86a7d31d019da27b4ec09623600897a2b3423b2e98a9846a00e8ca0ae2aa1f7a13cae9fe019d8d9db9cdb6437ee07f05bd74301d19e02440a739216ea1cc2a485425a1cc0d7459c73b75bdf87759d326052efb84b1d6da5a1052c609280c06aa22fd92b0d4623eae98a200d171f384ba56c917fec9aa5e66353eb1d661042699f97fb5be8c8497a75a91cce4eab74ddec6d84d94ed5cc929848307ca09bb026a57b592851eefe61a2c8aaf81dcd7e09ef879cbe16ca25b2f4b0094a8cb9ee1f567ae088ef970453e85bb044f05d47a877e7150ce946c652dec613207a3205370a4c473b162a78d057a596fac968811eb85f2d60b289afa0c54e009c0d6be541e3d9a83754decf408107d0e7cd21308835f26f2ce06395f65b6112ad629d1f108693841fc6445c42ce61f4841a7d95ff79cbccb864c939c4edbf4dcc073daf34f3b8f623b4ed7db6c7a0806e04a8f87c02f2d5a5fcbd6ba32b4ddff89685880697c6900ca3ebf710f2b82460e14c5a6f5e7294f91ae16623ffcd95099783cdd2cd9249c7339fc0f2bbbc518bc632921a19ca01942b143b1367912a825d59a79d40a6052429a4020302d13fb2a2a27e4b573bac400bc57893d0599f9e2544d146bed74e93f69dd9cf548f6de5ab4454f2c160e40d172075baba6298147a134af65da15646cae07a8d4f5a77efc61565a4aea774aaa63ddf25923912785de1ac8e246b177bdcfbbc4fcd157643701d2abe26b5cdd6393a231719bf73c43af55aef72441799fd35b901237e7668dda8ba27c947e65ff9513476c32d946802e21593c5abcfeca61ace758ef4c9c305e531dacfca15481a8acfb69c695948e4526e45c2ecc8039376b77b45e4b736def1f2968466f44be148b1ad802a611912c84ad0dab95b39718a272aa8a9172b33ff11c741adc4f0134ff49c835f1ed3a25d1f55e043b521a82435a2e357fb0a63f028e6cc18d402a52578b43e9b67bcaa9fab2561849926d1869228f6161017bb8c0dd1d4d952c534ed7f6a25cb6595d1357d2df78b78bb580bc93929bc2a750f3f7302a8088b9545ef88959dd36892324cbf90448caf7609635054bbbc82e4fae87ba0725e3849fa68e1855dc1939129c1c92efbee3a171e56104340f921527bd7454bebdcb667c8ccd5ffcd913154bb76739bb1161af654d534afb59c9fb1aa28ee0f02fcd8ba15f6f813124bb2578b51d3767669aa499b229b3566739d5ba454544a6294b6a829ae4dd4cfa3a74553ad029698457ff1822d6a5364ffc2723428a22f29a627a5f05c952c67256b1bc8d4c25e11a3c4dff1a02feac1971c1c2cd24a27f614612e45e487c08dfd41d0d0de27dfa4fab2d0179d03e48dcfcf5e4e1b3f6e27a68bae1357759b238c54523894cf7bbcafdbe164b068da20eb88683a6ff404022da10470090c5f96f018f273df736598b8b0f3ee3a2babc6e0b0869729f86d04fd2083bcd28d4ac67103d9d3ae687f96e958848a90d91c32bcb4d7da1080c401740060cf145ebe9bf00818f14d03b624123238312aaaa1e770c7d5dd33cf9f57fb48b4038d89da3f6a16ab6fd13d7fa00a7ad628af18ccf8f76860ba7a6fe9e3b6dafe99a61f3436b983744faa89aff940c21dea3e1b3cc41dd3f8154225bc1734aa7ecf9c34316b6f53da019090845a958fe228b9ab9c821e2a4741b8aa7770a847be965892e878afafd4425d031a396a136eb00eb47201e5874fde286bf7cc96cf417121329e054b8a2425c5563f4ae30fe2598c1d377bdcfb7b3e1432836760215303a87420ccf0fcf11590449ff43e6cbbcb952ee18ca656c30e249b6a6c7cf7463d95e72aef74e2ffbd42b32852c61947e4d29df529e98f62a606f329e5e29ca8b9c1ea2ee49d819d9029de8d5a1c08b1e3108db399715a4295ee206954d6d016ce514390a56d4253ccec4ee8f57619707274d9aa46a002c5f540fcd4ab7cb964fa57b5255f40450ddbc480b9ef6cb8a14dc120c68be9c766aa545750c136de510fca345a3ce0059c8d7f2f3d3d954b2cd270bb67cb853bb61938bb34ca49d27986495d0a09fb5489d749dd164f800ff0405edefd4c1868ab916eadf49c7a109dfa13a5f35d9e9c33c4252c23c1a89b679b173fd05cbda701ed173a3e19b7aaa05fe8d550e015487a93fc736cc50792fa5e055cc2d9715a049fe5a32c975adbd2dd7a6431dec8f716a5daa0a871da1cbbcd39b0fb4faa90f30dea53028bd3891ea1bef925572f6c9259a4c69463dcbfb2ab024a752e2ae2c06af07dd55b12e5fdbab3e10666084f6bb513baccc03558c29476a4c11b632087ff96f84c513c82376061086ec54b2d8be5b54db93ea7adb1e05ec62564b356c2c489015e02caabc6f0a8244877b0b12971a4c8932c7375f9c44cf9428a8613fc87044fde409c2b59ffe80c4cd01d90ade4712b25087488b8e85f98e402ef1b3726f42042d76774018ec1116ba196d6042c64f6703a787939d3b53bfdd7e9ab2a56a6e6fcd3e274876ef1f5a343fcd248c0d37a8feeb11e3331e57360dd8cf40627bff0d9d55d4a8c19315b3bc310d7192e62da886badefb1bef3dff934b7bb0dd68b868d31e2a590bd6906c45eafb427e99650b21823f413c6ad3939a27ffdf76e557870c890e3a4cea33209bbbf5947dc129d78beadb2670c74a7ac8d17748b3ae28796ad63b643c1e39b6f6646968af8c49027a8f8c36cede7770cdc5fbf2b2bc983d8f78a50abf89ca7cc56784e23c8829b40aea738af47dcaa7d5f40ed1842bace5633b195c34adb6e53e2d8dffff8307a378b8d72cc6829145692e36928de17c0af56caa61b1e5832d4484a9336628cf6fa4e92cf4580835459e9188eff1d0e55dcd1f5706d4a49f535d9963626e4d96def979640ae7fb2500e3a4e8fc1c365b53641109c78129f6833847a7c66fd39929320da795604c971f919d05b03b1d88ef1e41971cd4d7dc2d34050556a542151a749f73c3f3397ac631816a8c9efa59467f45b0926556115b1a99f5d4be4b9f81be4ddcc66cb1061670eb26bb17c29eeefa79d0ad1c2ab271b4443d79e851eaf2561f1bc84815bc4e21a618e1ea95e9cfa37b39bff038b7c9c3a1bbc81aa0fb5f770f1f8da2a30c092802ca307983cdf5e2573f4f5cf8c1da14291ffaa2970f8be56268851ffe0625a2f52c9c82e8ca59c041435fdc3768aeddc88d57c4bcb1c02b51c7296b5d18d33d89e2904dd9a95fb548e59f9a020b62826c6ebffcd323d2782a3e1ea2456752142145a07728273ebedaa7b60c904edf4b4666448778dcc07224351924c179ccb76007e434060e1412a5c3c197e52420516c1d4851a8be5bc6a5da09b8439edb443dda4087f60585c0c254ec55b11aaea7768b7b2c0811a8af28fc88cfafcbc7a05d95443bdf2a7efd9d569275421f6e20b8d641fb41b54b9f05a461e4b5cd9565cce14f37a985d384fc383170e8e2d346b24790aa4805d553bffaa300e2ac3f85cedc3ae5090b6096377ba4b7d6696b25bbce3f9a8dba67cb6ca9c8fe065477a37ae9115b9634670aa275b82c108d8b9af26766f80fe1b74d51ee58f15b13fea3911dfbea05cb35d2def47db18d30117a3a7aa7436d84af8d3908edbed2234b6e9ded236030aea59060356e358bbd739542991f5bf08004e08c65b883fe44183d4707f950cf42a87bd55975519f5672fcb6b7a10a30f405dddbac962731fe809343040003a2af875052132cfe848cfe3023d3fabf028f0ee602ab9899b58906587abb92c9d20bf29adb1dbd8e27f36600cc75e8dff15bc44e152a63c5bd51716dc7e38299edf4e01b0c809e41b8190305f036aa706923355aa2af97e6347fc53d5f12f898ff0c8d9174952732543c15862149bbc0e7c16b97619757a1217ec49abdb98771856d10feff700ad2efbf4185bc0d3aea1de5ddfe1061794d92d97563873bee7c05b1bcb228105df3c93b3162e5dc6cf4aa3ec827f2316a81d8a1c6e658b47e00656e8b4af756b1aa09efed1f64e57b534ac6c3c0a51a99cfe4b31090921ff0753c72d84e6350863dfa922fc14003f25288f6206d84bc8287f92020c7c2fb5afac713b07288f03a192127442eaf32a9cf5d88c9d3e283ff41042b4e818f7d06a13d3664296afc3bb9c0f502313c2253c3db3c2aab981bff4b1e7500665b7bd71f715a5d5429302dfc93388b2c30253209ae59a423fc82c7d5a63777db1e199064462934d6b5a1b12fa343d9b681fda764d415d81a2ad48382dfc4bb46df9adfca8e3579b131a0f08b22d3bb1a10f631524718eae55e25efa1f661cad53834de235e8fc428e4bf883d9535035fc4e00a678acf90831834decf818809d5c105681787c3bc6109e86560d80d7edf2cb66607a3b05339f359839a92dd5131d53d31978e9548fa1e16d45e94a3b14a5cdb68f1966c3e3d95b5e5ab63c3d70e47c8f16bb165d8c4c7a37923f551b69f62328ce11d76cb7caf209b3e9dd199c0bb95f19ec7178d8d1458c5107af48e11c79281ffefab242644c4eb1ae6d26553449f577a4703b10217d79f5feb61da2556cf9af265f2d95cdbb6cb1bd98596b2736044da90ef617455e9961a0f3faf7dff18cddd06430204e6c7631312e70c5a4ec51fa5b83686b8c0489a25ae8dbc04e69edfbcf6424752d873b15a2f94194070da1e0189ca02ec189f6089a541f325ec62cad0d4695a1a5a38c5089078a0a2e55efcb4ca04eeb01f5bdc7ca3152729c46b964db951469cc319d020c88f2357676ab71f9ff8a096c68242092d39926b87c265c5b05b2aa2e25a6f8b530a13d6a96c2353e00b0d63b63f602bc86568aa37d48a36cb7df2d95560bee6779f7f2169b21414be0b2cdbf1aabf6c27baa74597c57bf108a178b871ae3bcb779d9f6716d7e78bc4a9328c9db0faa008f97b6c6a170760b225021c52e5400dddc2c4e6c9b0670d80e2a3f0970e85cf33a0a8d178e8c370864b284464ecab55f9f3966380387df159401c21d7765c4066103cd5e89112f8949e3e2739d684df9a105938ad55d95be1c665baeb9b4480bd4b159458352e238fd4e0b79562eb1c991ae96c7f2c1c59d30775afc18f11fc72cdefa06da8331de55dc4fac3f1b66f833e3341e8f9e2148b270312345db75fa79f70337ef4979c70b93ebf876d37007e1374a6f4525d83799f04d14121b239c5acf8e09e6f63e42a159063eabd3d9345cd14bf7043b58d123b8f09ebb2a34b7b0eec62ac5eae062c87c63e6b4b71c364993a6428009b9bb778017971df09dee8be4362c92617116c7ff43ee67b3aed869caad46d95fd4409ef3dab9225417f65e1c5ee21530455f609ace64d7294ce47] */
+const {
+  validateCarmeWithType,
+  getCookies,
+  getUserInfoWithX,
+  wait,
+  commonNativeRequest
+} = require("./common.js");
+const _0x214b7d = process.env.ELE_CARME;
+const _0x1c5344 = 16;
+async function _0x2b0ccf(_0x53c8b8) {
+  let _0x3059c0 = "mtop.koubei.interactioncenter.platform.right.lottery";
+  try {
+    const _0x2a4626 = await commonNativeRequest(_0x53c8b8, _0x3059c0, _0x1c5344, 1, "", "mtop.ele.me", process.env.x5sec);
+    if (_0x2a4626.data.data.errorMsg) {
+      console.log(_0x2a4626.data.data.errorMsg);
+      return false;
+    } else {
+      const _0x98e5df = _0x2a4626.data.data.sendRightList[0].discountInfo.amount;
+      console.log("福尔魔方闯关成功。获得：" + _0x98e5df, "乐园币");
+      return _0x98e5df !== 1;
+    }
+  } catch (_0x5762cc) {
+    return false;
+  }
+}
+async function _0x20263b() {
+  await validateCarmeWithType(_0x214b7d, 1);
+  const _0x251e2b = getCookies();
+  for (let _0x4803cf = 0; _0x4803cf < _0x251e2b.length; _0x4803cf++) {
+    let _0x39a39d = _0x251e2b[_0x4803cf];
+    let _0x457d31 = await getUserInfoWithX(_0x39a39d);
+    if (_0x457d31 && _0x457d31[0]) {
+      console.log("第", _0x4803cf + 1, "账号失效！请重新登录！！！😭");
+      continue;
+    }
+    if (!_0x457d31 || !_0x457d31.userName) {
+      continue;
+    }
+    const _0x591d5a = _0x457d31.localId;
+    let _0x24a544 = _0x457d31.encryptMobile;
+    console.log("\n****** #" + (_0x4803cf + 1), _0x24a544, "*********");
+    console.log("账号的 id 为", _0x591d5a);
+    await _0x2b0ccf(_0x39a39d);
+    console.log("防止挤爆了，延时 1 秒");
+    await wait(1);
+  }
+  process.exit(0);
+}
+_0x20263b();
+function Env(t, e) {
+  "undefined" != typeof process && JSON.stringify(process.env).indexOf("GITHUB") > -1 && process.exit(0);
+  class s {
+    constructor(t) {
+      this.env = t;
+    }
+    send(t, e = "GET") {
+      t = "string" == typeof t ? {
+        url: t
+      } : t;
+      let s = this.get;
+      "POST" === e && (s = this.post);
+      return new Promise((e, i) => {
+        s.call(this, t, (t, s, r) => {
+          t ? i(t) : e(s);
+        });
+      });
+    }
+    get(t) {
+      return this.send.call(this.env, t);
+    }
+    post(t) {
+      return this.send.call(this.env, t, "POST");
+    }
+  }
+  return new class {
+    constructor(t, e) {
+      this.name = t;
+      this.http = new s(this);
+      this.data = null;
+      this.dataFile = "box.dat";
+      this.logs = [];
+      this.isMute = !1;
+      this.isNeedRewrite = !1;
+      this.logSeparator = "\n";
+      this.startTime = new Date().getTime();
+      Object.assign(this, e);
+      this.log("", `🔔${this.name}, 开始!`);
+    }
+    isNode() {
+      return "undefined" != typeof module && !!module.exports;
+    }
+    isQuanX() {
+      return "undefined" != typeof $task;
+    }
+    isSurge() {
+      return "undefined" != typeof $httpClient && "undefined" == typeof $loon;
+    }
+    isLoon() {
+      return "undefined" != typeof $loon;
+    }
+    toObj(t, e = null) {
+      try {
+        return JSON.parse(t);
+      } catch {
+        return e;
+      }
+    }
+    toStr(t, e = null) {
+      try {
+        return JSON.stringify(t);
+      } catch {
+        return e;
+      }
+    }
+    getjson(t, e) {
+      let s = e;
+      const i = this.getdata(t);
+      if (i) {
+        try {
+          s = JSON.parse(this.getdata(t));
+        } catch {}
+      }
+      return s;
+    }
+    setjson(t, e) {
+      try {
+        return this.setdata(JSON.stringify(t), e);
+      } catch {
+        return !1;
+      }
+    }
+    getScript(t) {
+      return new Promise(e => {
+        this.get({
+          url: t
+        }, (t, s, i) => e(i));
+      });
+    }
+    runScript(t, e) {
+      return new Promise(s => {
+        let i = this.getdata("@chavy_boxjs_userCfgs.httpapi");
+        i = i ? i.replace(/\n/g, "").trim() : i;
+        let r = this.getdata("@chavy_boxjs_userCfgs.httpapi_timeout");
+        r = r ? 1 * r : 20;
+        r = e && e.timeout ? e.timeout : r;
+        const [o, h] = i.split("@"),
+          n = {
+            url: `http://${h}/v1/scripting/evaluate`,
+            body: {
+              script_text: t,
+              mock_type: "cron",
+              timeout: r
+            },
+            headers: {
+              "X-Key": o,
+              Accept: "*/*"
+            }
+          };
+        this.post(n, (t, e, i) => s(i));
+      }).catch(t => this.logErr(t));
+    }
+    loaddata() {
+      if (!this.isNode()) {
+        return {};
+      }
+      {
+        this.fs = this.fs ? this.fs : require("fs");
+        this.path = this.path ? this.path : require("path");
+        const t = this.path.resolve(this.dataFile),
+          e = this.path.resolve(process.cwd(), this.dataFile),
+          s = this.fs.existsSync(t),
+          i = !s && this.fs.existsSync(e);
+        if (!s && !i) {
+          return {};
+        }
+        {
+          const i = s ? t : e;
+          try {
+            return JSON.parse(this.fs.readFileSync(i));
+          } catch (t) {
+            return {};
+          }
+        }
+      }
+    }
+    writedata() {
+      if (this.isNode()) {
+        this.fs = this.fs ? this.fs : require("fs");
+        this.path = this.path ? this.path : require("path");
+        const t = this.path.resolve(this.dataFile),
+          e = this.path.resolve(process.cwd(), this.dataFile),
+          s = this.fs.existsSync(t),
+          i = !s && this.fs.existsSync(e),
+          r = JSON.stringify(this.data);
+        s ? this.fs.writeFileSync(t, r) : i ? this.fs.writeFileSync(e, r) : this.fs.writeFileSync(t, r);
+      }
+    }
+    lodash_get(t, e, s) {
+      const i = e.replace(/\[(\d+)\]/g, ".$1").split(".");
+      let r = t;
+      for (const t of i) if (r = Object(r)[t], void 0 === r) {
+        return s;
+      }
+      return r;
+    }
+    lodash_set(t, e, s) {
+      return Object(t) !== t ? t : (Array.isArray(e) || (e = e.toString().match(/[^.[\]]+/g) || []), e.slice(0, -1).reduce((t, s, i) => Object(t[s]) === t[s] ? t[s] : t[s] = Math.abs(e[i + 1]) >> 0 == +e[i + 1] ? [] : {}, t)[e[e.length - 1]] = s, t);
+    }
+    getdata(t) {
+      let e = this.getval(t);
+      if (/^@/.test(t)) {
+        const [, s, i] = /^@(.*?)\.(.*?)$/.exec(t),
+          r = s ? this.getval(s) : "";
+        if (r) {
+          try {
+            const t = JSON.parse(r);
+            e = t ? this.lodash_get(t, i, "") : e;
+          } catch (t) {
+            e = "";
+          }
+        }
+      }
+      return e;
+    }
+    setdata(t, e) {
+      let s = !1;
+      if (/^@/.test(e)) {
+        const [, i, r] = /^@(.*?)\.(.*?)$/.exec(e),
+          o = this.getval(i),
+          h = i ? "null" === o ? null : o || "{}" : "{}";
+        try {
+          const e = JSON.parse(h);
+          this.lodash_set(e, r, t);
+          s = this.setval(JSON.stringify(e), i);
+        } catch (e) {
+          const o = {};
+          this.lodash_set(o, r, t);
+          s = this.setval(JSON.stringify(o), i);
+        }
+      } else {
+        s = this.setval(t, e);
+      }
+      return s;
+    }
+    getval(t) {
+      return this.isSurge() || this.isLoon() ? $persistentStore.read(t) : this.isQuanX() ? $prefs.valueForKey(t) : this.isNode() ? (this.data = this.loaddata(), this.data[t]) : this.data && this.data[t] || null;
+    }
+    setval(t, e) {
+      return this.isSurge() || this.isLoon() ? $persistentStore.write(t, e) : this.isQuanX() ? $prefs.setValueForKey(t, e) : this.isNode() ? (this.data = this.loaddata(), this.data[e] = t, this.writedata(), !0) : this.data && this.data[e] || null;
+    }
+    initGotEnv(t) {
+      this.got = this.got ? this.got : require("got");
+      this.cktough = this.cktough ? this.cktough : require("tough-cookie");
+      this.ckjar = this.ckjar ? this.ckjar : new this.cktough.CookieJar();
+      t && (t.headers = t.headers ? t.headers : {}, void 0 === t.headers.Cookie && void 0 === t.cookieJar && (t.cookieJar = this.ckjar));
+    }
+    get(t, e = () => {}) {
+      t.headers && (delete t.headers["Content-Type"], delete t.headers["Content-Length"]);
+      this.isSurge() || this.isLoon() ? (this.isSurge() && this.isNeedRewrite && (t.headers = t.headers || {}, Object.assign(t.headers, {
+        "X-Surge-Skip-Scripting": !1
+      })), $httpClient.get(t, (t, s, i) => {
+        !t && s && (s.body = i, s.statusCode = s.status);
+        e(t, s, i);
+      })) : this.isQuanX() ? (this.isNeedRewrite && (t.opts = t.opts || {}, Object.assign(t.opts, {
+        hints: !1
+      })), $task.fetch(t).then(t => {
+        const {
+          statusCode: s,
+          statusCode: i,
+          headers: r,
+          body: o
+        } = t;
+        e(null, {
+          status: s,
+          statusCode: i,
+          headers: r,
+          body: o
+        }, o);
+      }, t => e(t))) : this.isNode() && (this.initGotEnv(t), this.got(t).on("redirect", (t, e) => {
+        try {
+          if (t.headers["set-cookie"]) {
+            const s = t.headers["set-cookie"].map(this.cktough.Cookie.parse).toString();
+            s && this.ckjar.setCookieSync(s, null);
+            e.cookieJar = this.ckjar;
+          }
+        } catch (t) {
+          this.logErr(t);
+        }
+      }).then(t => {
+        const {
+          statusCode: s,
+          statusCode: i,
+          headers: r,
+          body: o
+        } = t;
+        e(null, {
+          status: s,
+          statusCode: i,
+          headers: r,
+          body: o
+        }, o);
+      }, t => {
+        const {
+          message: s,
+          response: i
+        } = t;
+        e(s, i, i && i.body);
+      }));
+    }
+    post(t, e = () => {}) {
+      if (t.body && t.headers && !t.headers["Content-Type"] && (t.headers["Content-Type"] = "application/x-www-form-urlencoded"), t.headers && delete t.headers["Content-Length"], this.isSurge() || this.isLoon()) {
+        this.isSurge() && this.isNeedRewrite && (t.headers = t.headers || {}, Object.assign(t.headers, {
+          "X-Surge-Skip-Scripting": !1
+        }));
+        $httpClient.post(t, (t, s, i) => {
+          !t && s && (s.body = i, s.statusCode = s.status);
+          e(t, s, i);
+        });
+      } else {
+        if (this.isQuanX()) {
+          t.method = "POST";
+          this.isNeedRewrite && (t.opts = t.opts || {}, Object.assign(t.opts, {
+            hints: !1
+          }));
+          $task.fetch(t).then(t => {
+            const {
+              statusCode: s,
+              statusCode: i,
+              headers: r,
+              body: o
+            } = t;
+            e(null, {
+              status: s,
+              statusCode: i,
+              headers: r,
+              body: o
+            }, o);
+          }, t => e(t));
+        } else {
+          if (this.isNode()) {
+            this.initGotEnv(t);
+            const {
+              url: s,
+              ...i
+            } = t;
+            this.got.post(s, i).then(t => {
+              const {
+                statusCode: s,
+                statusCode: i,
+                headers: r,
+                body: o
+              } = t;
+              e(null, {
+                status: s,
+                statusCode: i,
+                headers: r,
+                body: o
+              }, o);
+            }, t => {
+              const {
+                message: s,
+                response: i
+              } = t;
+              e(s, i, i && i.body);
+            });
+          }
+        }
+      }
+    }
+    time(t, e = null) {
+      const s = e ? new Date(e) : new Date();
+      let i = {
+        "M+": s.getMonth() + 1,
+        "d+": s.getDate(),
+        "H+": s.getHours(),
+        "m+": s.getMinutes(),
+        "s+": s.getSeconds(),
+        "q+": Math.floor((s.getMonth() + 3) / 3),
+        S: s.getMilliseconds()
+      };
+      /(y+)/.test(t) && (t = t.replace(RegExp.$1, (s.getFullYear() + "").substr(4 - RegExp.$1.length)));
+      for (let e in i) new RegExp("(" + e + ")").test(t) && (t = t.replace(RegExp.$1, 1 == RegExp.$1.length ? i[e] : ("00" + i[e]).substr(("" + i[e]).length)));
+      return t;
+    }
+    msg(e = t, s = "", i = "", r) {
+      const o = t => {
+        if (!t) {
+          return t;
+        }
+        if ("string" == typeof t) {
+          return this.isLoon() ? t : this.isQuanX() ? {
+            "open-url": t
+          } : this.isSurge() ? {
+            url: t
+          } : void 0;
+        }
+        if ("object" == typeof t) {
+          if (this.isLoon()) {
+            let e = t.openUrl || t.url || t["open-url"],
+              s = t.mediaUrl || t["media-url"];
+            return {
+              openUrl: e,
+              mediaUrl: s
+            };
+          }
+          if (this.isQuanX()) {
+            let e = t["open-url"] || t.url || t.openUrl,
+              s = t["media-url"] || t.mediaUrl;
+            return {
+              "open-url": e,
+              "media-url": s
+            };
+          }
+          if (this.isSurge()) {
+            let e = t.url || t.openUrl || t["open-url"];
+            return {
+              url: e
+            };
+          }
+        }
+      };
+      if (this.isMute || (this.isSurge() || this.isLoon() ? $notification.post(e, s, i, o(r)) : this.isQuanX() && $notify(e, s, i, o(r))), !this.isMuteLog) {
+        let t = ["", "==============📣系统通知📣=============="];
+        t.push(e);
+        s && t.push(s);
+        i && t.push(i);
+        console.log(t.join("\n"));
+        this.logs = this.logs.concat(t);
+      }
+    }
+    log(...t) {
+      t.length > 0 && (this.logs = [...this.logs, ...t]);
+      console.log(t.join(this.logSeparator));
+    }
+    logErr(t, e) {
+      const s = !this.isSurge() && !this.isQuanX() && !this.isLoon();
+      s ? this.log("", `❗️${this.name}, 错误!`, t.stack) : this.log("", `❗️${this.name}, 错误!`, t);
+    }
+    wait(t) {
+      return new Promise(e => setTimeout(e, t));
+    }
+    done(t = {}) {
+      const e = new Date().getTime(),
+        s = (e - this.startTime) / 1000;
+      this.log("", `🔔${this.name}, 结束! 🕛 ${s} 秒`);
+      this.log();
+      (this.isSurge() || this.isQuanX() || this.isLoon()) && $done(t);
+    }
+  }(t, e);
+}
